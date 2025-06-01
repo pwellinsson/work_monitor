@@ -21,3 +21,7 @@ nav#menu a {
   border-radius: 8px;
   min-width: 70px;
 }
+
+footer {
+  font-size: 1.2em;
+}

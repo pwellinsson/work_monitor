@@ -32,7 +32,8 @@ i#icon-menu {
   width: 95vw;
 }
 
-i#icon-menu, nav#menu a {
+i#icon-menu,
+nav#menu a {
   display: block;
   background-color: rgb(33, 33, 33);
   color: rgb(225, 225, 225);
@@ -42,11 +43,12 @@ i#icon-menu, nav#menu a {
   border-radius: 4px;
 }
 
-i#icon-menu:hover, nav#menu a:hover {
+i#icon-menu:hover,
+nav#menu a:hover {
   cursor: pointer;
-  background-color: rgb(225, 225, 225);;
+  background-color: rgb(225, 225, 225);
   color: rgb(48, 48, 48);
-  transition: background-color .5s;
+  transition: background-color 0.5s;
 }
 
 header > nav#menu {
@@ -73,9 +75,9 @@ nav#menu a {
 main {
   background-color: white;
   width: 96vw;
-  margin: auto;
+  max-width: 900px;
   padding: 10px;
-  margin: 10px;
+  margin: 10px auto;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.414);
 }
@@ -84,7 +86,50 @@ article {
   padding: 8px;
 }
 
-article > p {
+article h2 {
+  text-align: left;
+  padding: 8px;
+  padding-top: 0px;
+}
+
+article p {
   text-align: justify;
   text-indent: 10px;
+  padding-top: 8px;
+}
+
+footer {
+  font-size: .9em;
+  position: fixed;
+  bottom: 1px;
+  width: 100%;
+  background-color: rgb(39, 65, 65);
+  color: white;
+  text-align: center;
+  padding: 4px;
+}
+
+div#social {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  padding: 3px;
+}
+
+div#social > a {
+  color: white;
+  font-size: 0.9em;
+  text-decoration: none;
+  padding-bottom: 4px;
+}
+
+div#social > a:hover {
+  text-decoration: underline;
+  color: rgb(225, 225, 225);
+}
+
+div#social img {
+  width: 17px;
+  margin-right: 3px;
+  margin-bottom: -3px;
 }

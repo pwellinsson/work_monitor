@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="../styles/tablet.css"
+      media="screen and (min-width: 600px)"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      main {
+        font-size: 1.3em;
+        max-width: 600px;
+        height: 500px;
+      }
+
+      article {
+        display: grid;
+        height: 100%;
+        /* grid-template-columns: repeat(2, 1fr); */
+        /* grid-template-rows: repeat(3, auto); */
+        grid-template-rows: 30px 70px auto;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+      }
+
+      form {
+        display: grid;
+        /* grid-template-columns: 110px auto; */
+        grid-template-rows: auto 30px 30px;
+        /* grid-column-gap: 10px;
+        grid-row-gap: 10px; */
+      }
+
+      form > section#content {
+        display: grid;
+        grid-template-columns: 110px auto;
+        grid-template-rows: repeat(3, 40px) auto;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+      }
+
+      /* form {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        align-items: left;
+      } */
+
+      form > label {
+        margin: 5px;
+      }
+
+      label {
+        text-align: left;
+      }
+
+      input, textarea {
+        margin: 5px;
+        border-radius: 5px;
+        border: 2px solid rgba(0, 0, 0, 0.682);
+      }
+
+      input {
+        max-width: 400px;
+        padding: 5px;
+      }
+
+      label#msg {
+        margin-top: 10px;
+      }
+
+      #mensagem {
+        border: 2px solid rgba(0, 0, 0, 0.682);
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body onresize="mudouTamanho()">
+    <header>
+      <h1>Página principal</h1>
+      <i id="icon-menu" class="material-icons" onclick="clickMenu()">menu</i>
+      <nav id="menu">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="perfil/perfil.html">Perfil</a></li>
+          <li><a href="tema.html">Tema</a></li>
+          <li><a href="form/form.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <h2>Contato</h2>
+        <p>Preencha o formulário abaixo para entrar em contato comigo.</p>
+        <form action="enviar.js" method="get" autocomplete="on">
+          <!--Não enviarei para lugar algum, apenas para mostrar o uso-->
+          <section id="content">
+            <label for="nome">Nome:</label>
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              autocomplete="name"
+              placeholder="Nome Completo"
+              required
+            />
+            <label for="email">E-mail:</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              autocomplete="email"
+              placeholder="email@dominio"
+              required
+            />
+            <label for="telefone">Telefone:</label>
+            <input
+              type="tel"
+              name="telefone"
+              id="telefone"
+              autocomplete="tel"
+              placeholder="(XX) XXXXX-XXXX"
+              required
+            />
+            <label id="msg" for="mensagem">Mensagem:</label>
+            <textarea name="mensagem" id="mensagem"></textarea>
+          </section>
+
+          <input type="submit" value="Enviar" />
+          <input type="reset" value="Limpar" />
+        </form>
+      </article>
+    </main>
+    <footer>
+      <div id="social">
+        <a href="https://www.instagram.com/p_wellinsson/" target="_blank"
+          ><img src="../img/social/instagram.png" alt="Instagram" />Instagram</a
+        >
+        <a href="https://github.com/pwellinsson" target="_blank"
+          ><img src="../img/social/github.png" alt="GitHub" />GitHub</a
+        >
+        <a href="https://www.linkedin.com/in/pedro-wellinsson/" target="_blank"
+          ><img src="../img/social/linkedin.png" alt="Linkedin" />Linkedin</a
+        >
+      </div>
+      <p>&copy;Site criado por Pedro Wellinsson Santos da Silva</p>
+    </footer>
+    <script src="../script.js"></script>
+  </body>
+</html>
