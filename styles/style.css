@@ -14,7 +14,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: lightgray;
   height: 100dvh;
-  width: 100dvw;
+  width: 97dvw;
 }
 
 header {
@@ -29,7 +29,7 @@ header > h1 {
 }
 
 i#icon-menu {
-  width: 95vw;
+  width: 95dvw;
 }
 
 i#icon-menu,
@@ -92,21 +92,24 @@ article h2 {
   padding-top: 0px;
 }
 
+article h3 {
+  text-align: center;
+  padding: 8px;
+  padding-top: 0px;
+}
+
 article p {
   text-align: justify;
   text-indent: 10px;
-  padding-top: 8px;
+  padding: 5px;
 }
 
-footer {
-  font-size: .9em;
-  position: fixed;
-  bottom: 1px;
-  width: 100%;
-  background-color: rgb(39, 65, 65);
-  color: white;
-  text-align: center;
-  padding: 4px;
+.card {
+  background-color: lightgray;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.164);
 }
 
 div#social {
@@ -128,8 +131,17 @@ div#social > a:hover {
   color: rgb(225, 225, 225);
 }
 
-div#social img {
+#social img, #menu img {
   width: 17px;
   margin-right: 3px;
   margin-bottom: -3px;
+}
+
+footer {
+  font-size: .9em;
+  width: 100%;
+  background-color: rgb(39, 65, 65);
+  color: white;
+  text-align: center;
+  padding: 4px;
 }

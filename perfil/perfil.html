@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="icon-profiles.ico" type="image/x-icon" />
+    <title>Perfil</title>
+    <style>
+      .perfil-intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+        text-align: center;
+      }
+
+      .foto-perfil img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .foto-perfil figcaption {
+        margin-top: 0.5rem;
+        font-weight: 500;
+        font-size: 1.2rem;
+      }
+
+      .bio {
+        margin-top: 1.5rem;
+        max-width: 600px;
+      }
+
+      .bio p {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .bio .mais-bio {
+        display: none;
+      }
+
+      .bio .mais-bio.exibir {
+        display: inline;
+      }
+
+      .habilidades {
+        padding: 2rem 1rem;
+        background: var(--cor-secundaria);
+      }
+
+      .lista-habilidades {
+        list-style: none;
+        padding: 0;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .lista-habilidades li {
+        margin-bottom: 1rem;
+        font-weight: 500;
+        position: relative;
+      }
+
+      .barra-progresso {
+        display: block;
+        background: #ddd;
+        width: 100%;
+        height: 8px;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-top: 0.3rem;
+      }
+
+      .barra-progresso span {
+        display: block;
+        height: 100%;
+        background: var(--cor-primaria);
+      }
+
+      .hobbies {
+        padding: 2rem 1rem;
+      }
+
+      .cards-hobbies {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .card-hobby {
+        background: #fff;
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        text-align: center;
+      }
+
+      .card-hobby img {
+        width: 40px;
+        margin-bottom: 0.5rem;
+      }
+
+      .card-hobby h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      .card-hobby p {
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      .galeria {
+        padding: 2rem 1rem;
+      }
+
+      .grade-galeria {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .grade-galeria img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+
+      .grade-galeria img:hover {
+        transform: scale(1.05);
+      }
+
+      @media (min-width: 768px) {
+        .perfil-intro {
+          flex-direction: row;
+          text-align: left;
+          justify-content: center;
+        }
+
+        .foto-perfil {
+          margin-right: 2rem;
+        }
+
+        .bio {
+          margin-top: 0;
+        }
+
+        .cards-hobbies {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grade-galeria {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="../styles/tablet.css"
+      media="screen and (min-width: 600px)"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body onresize="mudouTamanho()">
+    <header>
+      <h1>Perfil de Pedro</h1>
+      <i id="icon-menu" class="material-icons" onclick="clickMenu()">menu</i>
+      <nav id="menu">
+        <ul>
+          <li>
+            <a href="../index.html"
+              ><img src="../img/icon-home.ico" alt="Icone Home" />Home</a
+            >
+          </li>
+          <li>
+            <a href="perfil.html"
+              ><img src="icon-profiles.ico" alt="Icone Perfil" /> Perfil</a
+            >
+          </li>
+          <li><a href="../tema.html">Tema</a></li>
+          <li>
+            <a href="../form/form.html"
+              ><img src="../form/icon-form.ico" alt="Icone Contato" />
+              Contato</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="perfil-intro">
+        <figure class="foto-perfil">
+          <img src="img/main_photo.jpg" alt="Foto de Perfil" />
+          <figcaption>Pedro Wellinsson</figcaption>
+        </figure>
+        <div class="bio">
+          <h2>Sobre Mim</h2>
+          <p>
+            Olá! Meu nome é Pedro Wellinsson Santos da Silva, sou estudante do
+            IFAL - Palmeira dos Índios e tenho paixão por informática e
+            tecnologias envolvendo programação.
+            <!-- <span
+              id="mais-bio"
+              class="mais-bio oculto"
+            >
+              Aqui você pode escrever mais detalhes sobre sua trajetória,
+              valores, motivações, etc. Quanto mais pessoal e autêntico, melhor.
+              Utilize ícones ou emojis sutis para destacar pontos-chave.</span>
+            
+          </p>
+          <button id="btn-ler-mais" class="btn-pequeno">Ler mais</button> -->
+        </div>
+      </section>
+
+      <section class="habilidades">
+        <h2>Habilidades</h2>
+        <ul class="lista-habilidades">
+          <li>
+            HTML5
+            <span class="barra-progresso"
+              ><span style="width: 90%"></span
+            ></span>
+          </li>
+          <li>
+            CSS3
+            <span class="barra-progresso"
+              ><span style="width: 85%"></span
+            ></span>
+          </li>
+          <li>
+            JavaScript
+            <span class="barra-progresso"
+              ><span style="width: 75%"></span
+            ></span>
+          </li>
+          <li>
+            TypeScript
+            <span class="barra-progresso"
+              ><span style="width: 75%"></span
+            ></span>
+          </li>
+          <li>
+            C#
+            <span class="barra-progresso"
+              ><span style="width: 75%"></span
+            ></span>
+          </li>
+          <li>
+            Python
+            <span class="barra-progresso"
+              ><span style="width: 90%"></span
+            ></span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="hobbies">
+        <h2>Hobbies</h2>
+        <div class="cards-hobbies">
+          <div class="card-hobby">
+            <img src="img/movie.png" alt="Ícone Música" />
+            <h3>Assistir</h3>
+            <p>
+              Gosto de assistir filmes e séries, principalmente de filmes de
+              mistério e aventura.
+            </p>
+          </div>
+          <div class="card-hobby">
+            <img src="img/book.png" alt="Ícone Livros" />
+            <h3>Leitura</h3>
+            <p>
+              Pratico leitura de ficção científica e histórias de aventura com livros online.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="galeria">
+        <h2>Galeria de Fotos</h2>
+        <div class="grade-galeria">
+          <img src="img/img01.jpeg" alt="Foto 1" />
+          <img src="img/img02.jpeg" alt="Foto 2" />
+          <img src="img/img03.jpeg" alt="Foto 3" />
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div id="social">
+        <a href="https://www.instagram.com/p_wellinsson/" target="_blank"
+          ><img src="../img/social/instagram.png" alt="Instagram" />Instagram</a
+        >
+        <a href="https://github.com/pwellinsson" target="_blank"
+          ><img src="../img/social/github.png" alt="GitHub" />GitHub</a
+        >
+        <a href="https://www.linkedin.com/in/pedro-wellinsson/" target="_blank"
+          ><img src="../img/social/linkedin.png" alt="Linkedin" />Linkedin</a
+        >
+      </div>
+      <p>&copy;Site criado por Pedro Wellinsson Santos da Silva</p>
+    </footer>
+    <script src="../script.js"></script>
+  </body>
+</html>
