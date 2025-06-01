@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="icon-form.ico" type="image/x-icon">
     <title>Formulário</title>
     <link rel="stylesheet" href="../styles/style.css" />
     <link
@@ -24,8 +25,6 @@
       article {
         display: grid;
         height: 100%;
-        /* grid-template-columns: repeat(2, 1fr); */
-        /* grid-template-rows: repeat(3, auto); */
         grid-template-rows: 30px 70px auto;
         grid-column-gap: 10px;
         grid-row-gap: 10px;
@@ -33,26 +32,11 @@
 
       form {
         display: grid;
-        /* grid-template-columns: 110px auto; */
-        grid-template-rows: auto 30px 30px;
-        /* grid-column-gap: 10px;
-        grid-row-gap: 10px; */
-      }
-
-      form > section#content {
-        display: grid;
         grid-template-columns: 110px auto;
-        grid-template-rows: repeat(3, 40px) auto;
+        grid-template-rows: repeat(3, 40px) auto 45px;
         grid-column-gap: 10px;
         grid-row-gap: 10px;
       }
-
-      /* form {
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: space-between;
-        align-items: left;
-      } */
 
       form > label {
         margin: 5px;
@@ -62,7 +46,8 @@
         text-align: left;
       }
 
-      input, textarea {
+      input,
+      textarea {
         margin: 5px;
         border-radius: 5px;
         border: 2px solid rgba(0, 0, 0, 0.682);
@@ -78,8 +63,33 @@
       }
 
       #mensagem {
+        font-size: 1.1em;
         border: 2px solid rgba(0, 0, 0, 0.682);
         text-decoration: underline;
+      }
+
+      input[type="submit"],
+      input[type="reset"] {
+        width: 100px;
+        background-image: linear-gradient(
+          to bottom,
+          rgb(232, 232, 232),
+          darkgray
+        );
+        font-size: 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.216);
+        padding: 5px;
+      }
+
+      input[type="submit"]:hover,
+      input[type="reset"]:hover {
+        background-image: linear-gradient(
+          to left,
+          darkgray,
+          rgb(232, 232, 232)
+        );
       }
     </style>
   </head>
@@ -89,10 +99,23 @@
       <i id="icon-menu" class="material-icons" onclick="clickMenu()">menu</i>
       <nav id="menu">
         <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="perfil/perfil.html">Perfil</a></li>
-          <li><a href="tema.html">Tema</a></li>
-          <li><a href="form/form.html">Contato</a></li>
+          <li>
+            <a href="../index.html"
+              ><img src="../img/icon-home.ico" alt="Icone Home" />Home</a
+            >
+          </li>
+          <li>
+            <a href="../perfil/perfil.html"
+              ><img src="../perfil/icon-profiles.ico" alt="Icone Perfil" />
+              Perfil</a
+            >
+          </li>
+          <li><a href="../tema.html">Tema</a></li>
+          <li>
+            <a href="form.html"
+              ><img src="icon-form.ico" alt="Icone Contato" /> Contato</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
@@ -102,37 +125,38 @@
         <p>Preencha o formulário abaixo para entrar em contato comigo.</p>
         <form action="enviar.js" method="get" autocomplete="on">
           <!--Não enviarei para lugar algum, apenas para mostrar o uso-->
-          <section id="content">
-            <label for="nome">Nome:</label>
-            <input
-              type="text"
-              name="nome"
-              id="nome"
-              autocomplete="name"
-              placeholder="Nome Completo"
-              required
-            />
-            <label for="email">E-mail:</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              autocomplete="email"
-              placeholder="email@dominio"
-              required
-            />
-            <label for="telefone">Telefone:</label>
-            <input
-              type="tel"
-              name="telefone"
-              id="telefone"
-              autocomplete="tel"
-              placeholder="(XX) XXXXX-XXXX"
-              required
-            />
-            <label id="msg" for="mensagem">Mensagem:</label>
-            <textarea name="mensagem" id="mensagem"></textarea>
-          </section>
+          <label for="nome">Nome:</label>
+          <input
+            type="text"
+            name="nome"
+            id="nome"
+            autocomplete="name"
+            minlength="5"
+            placeholder="Nome Completo"
+            required
+          />
+          <label for="email">E-mail:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            autocomplete="email"
+            minlength="5"
+            placeholder="email@dominio"
+            required
+          />
+          <label for="telefone">Telefone:</label>
+          <input
+            type="tel"
+            name="telefone"
+            id="telefone"
+            autocomplete="tel"
+            pattern="^\(\d{2}\)\d{4,5}-\d{4}$"
+            placeholder="(XX)XXXXX-XXXX"
+            required
+          />
+          <label id="msg" for="mensagem">Mensagem:</label>
+          <textarea name="mensagem" id="mensagem"></textarea>
 
           <input type="submit" value="Enviar" />
           <input type="reset" value="Limpar" />
