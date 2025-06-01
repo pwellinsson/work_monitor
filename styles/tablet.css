@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+i#icon-menu {
+  display: none;
+}
+
+nav#menu > ul {
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: row nowrap;
+}
+
+nav#menu a {
+  padding: 11px;
+  border-radius: 8px;
+  min-width: 70px;
+}
