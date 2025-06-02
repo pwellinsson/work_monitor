@@ -3,8 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="img/icon-home.ico" type="image/x-icon" />
-    <title>Página principal</title>
+    <link rel="shortcut icon" href="img/icon-tema.png" type="image/x-icon" />
+    <title>Piratas do Caribe</title>
+    <style>
+      article {
+        display: flex;
+        flex-flow: column nowrap;
+      }
+
+      section {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1vh;
+      }
+
+      h2 {
+        font-size: 1.3em;
+        text-align: left;
+      }
+
+      section p {
+        font-size: 0.9em;
+        text-align: justify;
+        text-indent: 2em;
+        line-height: 1.4em;
+      }
+
+      ul#pers {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        width: 100%;
+        list-style-type: none;
+      }
+
+      img#caribe {
+        display: block;
+        width: 50vw;
+        max-width: 250px;
+        border-radius: 20%;
+        margin: 0 auto;
+        margin-top: 2vh;
+      }
+    </style>
     <link rel="stylesheet" href="../styles/style.css" />
     <link
       rel="stylesheet"
@@ -18,25 +59,26 @@
   </head>
   <body onresize="mudouTamanho()">
     <header>
-      <h1>Página principal</h1>
+      <h1>Piratas do Caribe</h1>
       <i id="icon-menu" class="material-icons" onclick="clickMenu()">menu</i>
       <nav id="menu">
         <ul>
           <li>
-            <a href="index.html"
+            <a href="../index.html"
               ><img src="../img/icon-home.ico" alt="Icone Home" />Home</a
             >
           </li>
           <li>
-            <a href="perfil/perfil.html"
+            <a href="../perfil/perfil.html"
               ><img src="../perfil/icon-profiles.ico" alt="Icone Perfil" />
               Perfil</a
             >
           </li>
-          <li><a href="tema.html">Tema</a></li>
+          <li><a href="tema.html"><img src="img/icon-tema.png" alt="Icone Piratas do Caribe"> Tema</a></li>
           <li>
-            <a href="form/form.html"
-              ><img src="../form/icon-form.ico" alt="Icone Contato" /> Contato</a
+            <a href="../form/form.html"
+              ><img src="../form/icon-form.ico" alt="Icone Contato" />
+              Contato</a
             >
           </li>
         </ul>
@@ -44,13 +86,34 @@
     </header>
     <main>
       <article>
-        <section>
-          
+        <h2>História</h2>
+        <section class="descricao">
+          <p>
+            A série se passa em um mundo fictício, e gira em torno das aventuras
+            do Capitão Jack Sparrow.
+          </p>
+          <p>
+            As histórias são divertidas e emocionantes e são uma ótima forma de
+            passar o tempo com amigos.
+          </p>
+          <h2>Personagens</h2>
+          <p>
+            Os personagens mais importantes para a trama que a História tem foco
+            são:
+          </p>
         </section>
-
-        <section class="destaques">
-          
-        </section>
+        <ul id="pers">
+          <li>Jack Sparrow</li>
+          <li>Will Turner</li>
+          <li>Elizabeth Swann</li>
+        </ul>
+        <p>
+          <img
+            id="caribe"
+            src="img/foto_piratas.jpg"
+            alt="Imagem Piratas do Caribe"
+          />
+        </p>
       </article>
     </main>
     <footer>

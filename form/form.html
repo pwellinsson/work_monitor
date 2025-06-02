@@ -15,10 +15,87 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <style>
+      main {
+        font-size: 1.3em;
+        max-width: 600px;
+        height: 500px;
+      }
+
+      article {
+        display: grid;
+        height: 100%;
+        grid-template-rows: 30px 70px auto;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+      }
+
+      form {
+        display: grid;
+        grid-template-columns: 110px auto;
+        grid-template-rows: repeat(3, 40px) auto 45px;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+      }
+
+      form > label {
+        margin: 5px;
+      }
+
+      label {
+        text-align: left;
+      }
+
+      input,
+      textarea {
+        margin: 5px;
+        border-radius: 5px;
+        border: 2px solid rgba(0, 0, 0, 0.682);
+      }
+
+      input {
+        max-width: 400px;
+        padding: 5px;
+      }
+
+      label#msg {
+        margin-top: 10px;
+      }
+
+      #mensagem {
+        font-size: 1.1em;
+        border: 2px solid rgba(0, 0, 0, 0.682);
+        text-decoration: underline;
+      }
+
+      input[type="submit"],
+      input[type="reset"] {
+        width: 100px;
+        background-image: linear-gradient(
+          to bottom,
+          rgb(232, 232, 232),
+          darkgray
+        );
+        font-size: 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.216);
+        padding: 5px;
+      }
+
+      input[type="submit"]:hover,
+      input[type="reset"]:hover {
+        background-image: linear-gradient(
+          to left,
+          darkgray,
+          rgb(232, 232, 232)
+        );
+      }
+    </style>
   </head>
   <body onresize="mudouTamanho()">
     <header>
-      <h1>Página principal</h1>
+      <h1>Página de Contato</h1>
       <i id="icon-menu" class="material-icons" onclick="clickMenu()">menu</i>
       <nav id="menu">
         <ul>
@@ -33,7 +110,7 @@
               Perfil</a
             >
           </li>
-          <li><a href="../tema/tema.html">Tema</a></li>
+          <li><a href="../tema/tema.html"><img src="../tema/img/icon-tema.png" alt="Icone Piratas do Caribe"> Tema</a></li>
           <li>
             <a href="form.html"
               ><img src="icon-form.ico" alt="Icone Contato" /> Contato</a
