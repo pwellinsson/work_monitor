@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="icon-form.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="icon-form.ico" type="image/x-icon" />
     <title>Formulário</title>
     <link rel="stylesheet" href="../styles/style.css" />
     <link
@@ -110,7 +110,15 @@
               Perfil</a
             >
           </li>
-          <li><a href="../tema/tema.html"><img src="../tema/img/icon-tema.png" alt="Icone Piratas do Caribe"> Tema</a></li>
+          <li>
+            <a href="../tema/tema.html"
+              ><img
+                src="../tema/img/icon-tema.png"
+                alt="Icone Piratas do Caribe"
+              />
+              Tema</a
+            >
+          </li>
           <li>
             <a href="form.html"
               ><img src="icon-form.ico" alt="Icone Contato" /> Contato</a
@@ -123,8 +131,12 @@
       <article>
         <h2>Contato</h2>
         <p>Preencha o formulário abaixo para entrar em contato comigo.</p>
-        <form action="enviar.js" method="get" autocomplete="on">
-          <!--Não enviarei para lugar algum, apenas para mostrar o uso-->
+        <form
+          id="formContato"
+          action="https://script.google.com/macros/s/AKfycbw-ARsWfSCLHPw7VXyM0pOBP5RWhk3h8kHHA3SBPkpRUn6pn7fza7mbyLc0Qb7AKiRU/exec"
+          method="post"
+          autocomplete="on"
+        >
           <label for="nome">Nome:</label>
           <input
             type="text"
